@@ -40,11 +40,13 @@
         b = n(1),
         x = Object(u.a)({
           Container: {
-            maxWidth: '1200px',
-            margin: '0 auto',
-            padding: '0 15px',
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gridGap: '16px',
+            paddingBottom: '24px',
             '& h2': {
-              margin: '0 auto',
+              display: 'flex',
+              justifyContent: 'center',
               marginTop: '25px',
               fontSize: '35px',
               fontWeight: 'bold',
@@ -52,14 +54,14 @@
             },
           },
         }),
-        h = function (e) {
+        g = function (e) {
           var t = e.children,
             n = x();
           return Object(b.jsx)('div', { className: n.Container, children: t });
         },
-        g = function (e) {
+        h = function (e) {
           var t = e.children;
-          return Object(b.jsx)(h, { children: t });
+          return Object(b.jsx)(g, { children: t });
         },
         m = Object(u.a)({
           Searchbar: {
@@ -268,11 +270,11 @@
           });
         },
         k = n(23),
-        I = n.n(k),
-        C = Object(u.a)({ spinner: { margin: '0 auto' } }),
+        C = n.n(k),
+        I = Object(u.a)({ spinner: { margin: '0 auto' } }),
         L = function () {
-          var e = C();
-          return Object(b.jsx)(I.a, {
+          var e = I();
+          return Object(b.jsx)(C.a, {
             className: e.spinner,
             type: 'Puff',
             color: 'orange',
@@ -341,32 +343,32 @@
           p = c[1],
           u = Object(a.useState)(''),
           x = Object(l.a)(u, 2),
-          h = x[0],
+          g = x[0],
           m = x[1],
           j = Object(a.useState)(!1),
           O = Object(l.a)(j, 2),
           v = O[0],
           S = O[1],
           k = Object(a.useState)(null),
-          I = Object(l.a)(k, 2),
-          C = I[0],
-          R = I[1],
+          C = Object(l.a)(k, 2),
+          I = C[0],
+          R = C[1],
           N = Object(a.useState)(''),
           F = Object(l.a)(N, 2),
           U = F[0],
           B = F[1],
-          E = Object(a.useState)(''),
-          G = Object(l.a)(E, 2),
-          P = G[0],
-          T = G[1];
+          G = Object(a.useState)(''),
+          E = Object(l.a)(G, 2),
+          P = E[0],
+          T = E[1];
         Object(a.useEffect)(
           function () {
-            h && W();
+            g && M();
           },
-          [h],
+          [g],
         );
-        var W = function () {
-            var e = { currentPage: s, searchQuery: h };
+        var M = function () {
+            var e = { currentPage: s, searchQuery: g };
             S(!0),
               d(e)
                 .then(function (e) {
@@ -391,13 +393,11 @@
                 })
                 .catch(function (e) {
                   return R(e);
-                })
-                .finally(function () {
-                  return S(!1);
-                });
+                }),
+              S(!1);
           },
-          M = n.length > 0 && !v;
-        return Object(b.jsx)(g, {
+          W = n.length > 0 && !v;
+        return Object(b.jsx)(h, {
           children: Object(b.jsxs)('div', {
             className: 'App',
             children: [
@@ -406,7 +406,7 @@
                   m(e), r([]), p(1), R(null);
                 },
               }),
-              C
+              I
                 ? Object(b.jsx)('h2', {
                     children: 'OMG. Check connect to the internet(((',
                   })
@@ -425,7 +425,7 @@
                                 },
                               }),
                               v && Object(b.jsx)(L, {}),
-                              M && Object(b.jsx)(w, { onClick: W }),
+                              W && Object(b.jsx)(w, { onClick: M }),
                               U &&
                                 Object(b.jsx)(z, {
                                   onClose: function () {
@@ -452,4 +452,4 @@
   },
   [[74, 1, 2]],
 ]);
-//# sourceMappingURL=main.939d8048.chunk.js.map
+//# sourceMappingURL=main.9371c21f.chunk.js.map

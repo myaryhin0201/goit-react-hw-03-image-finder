@@ -1,9 +1,3 @@
-.App {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 16px;
-  padding-bottom: 24px;
-}
 html {
   box-sizing: border-box;
   width: 100vw;
@@ -116,4 +110,4 @@ a,
 ul {
   text-decoration: none;
 }
-/*# sourceMappingURL=main.a680bac3.chunk.css.map */
+/*# sourceMappingURL=main.92bfc834.chunk.css.map */
