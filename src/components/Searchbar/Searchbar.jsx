@@ -1,23 +1,43 @@
-import useStyles from './SearchbarStyles';
-const Searchbar = () => {
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+import useStyles from './SearchBarStyles';
+
+const SearchBar = ({ onSubmit }) => {
+  const [query, setQuery] = useState('');
   const classes = useStyles();
+
+  const handleChange = e => {
+    setQuery(e.currentTarget.value);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    onSubmit(query);
+    setQuery('');
+  };
+
   return (
     <header className={classes.Searchbar}>
-      <form className="SearchForm">
-        <button type="submit" className="SearchForm-button">
-          <span className="SearchForm-button-label">Search</span>
+      <form className={classes.SearchForm} onSubmit={handleSubmit}>
+        <button type="submit" className={classes.SearchFormButton}>
+          <span className={classes.SearchFormButtonLabel}>Search</span>
         </button>
-
         <input
-          className="SearchForm-input"
+          className={classes.SearchFormInput}
+          value={query}
           type="text"
-          autocomplete="off"
-          autofocus
+          autoComplete="off"
+          autoFocus
           placeholder="Search images and photos"
+          onChange={handleChange}
         />
       </form>
     </header>
   );
 };
 
-export default Searchbar;
+SearchBar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
+
+export default SearchBar;

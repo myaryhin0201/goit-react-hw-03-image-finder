@@ -2,18 +2,22 @@
   "name": "finder",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://myaryhin0201.github.io/goit-react-hw-03-finder",
+  "homepage": "https://myaryhin0201.github.io/goit-react-hw-03-image-finder",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
     "modern-normalize": "^1.0.0",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-jss": "^10.6.0",
+    "react-loader-spinner": "^4.0.0",
     "react-scripts": "4.0.3",
+    "react-use": "^17.2.3",
     "shortid": "^2.2.16",
+    "use": "^3.1.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
