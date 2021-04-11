@@ -14,31 +14,9 @@
         s = n(12),
         p = n.n(s);
       p.a.defaults.baseURL = 'https://pixabay.com/api';
-      var d = function (e) {
-          var t = e.searchQuery,
-            n = void 0 === t ? '' : t,
-            a = e.currentPage,
-            r = void 0 === a ? 1 : a,
-            o = e.perPage,
-            c = void 0 === o ? 9 : o;
-          return p.a
-            .get(
-              '/?q='
-                .concat(n, '&page=')
-                .concat(r, '&key=')
-                .concat(
-                  '20359490-f2da25da5356f05e90d2084aa',
-                  '&image_type=photo&orientation=horizontal&per_page=',
-                )
-                .concat(c),
-            )
-            .then(function (e) {
-              return e.data.hits;
-            });
-        },
-        u = n(3),
-        b = n(1),
-        x = Object(u.a)({
+      var d = n(3),
+        u = n(1),
+        b = Object(d.a)({
           Container: {
             display: 'grid',
             gridTemplateColumns: '1fr',
@@ -54,16 +32,16 @@
             },
           },
         }),
-        g = function (e) {
+        x = function (e) {
           var t = e.children,
-            n = x();
-          return Object(b.jsx)('div', { className: n.Container, children: t });
+            n = b();
+          return Object(u.jsx)('div', { className: n.Container, children: t });
         },
-        h = function (e) {
+        g = function (e) {
           var t = e.children;
-          return Object(b.jsx)(g, { children: t });
+          return Object(u.jsx)(x, { children: t });
         },
-        m = Object(u.a)({
+        h = Object(d.a)({
           Searchbar: {
             top: 0,
             left: 0,
@@ -132,30 +110,30 @@
             '&::placeholder': { font: 'inherit', fontSize: '18px' },
           },
         }),
-        f = function (e) {
+        m = function (e) {
           var t = e.onSubmit,
             n = Object(a.useState)(''),
             r = Object(l.a)(n, 2),
             o = r[0],
             c = r[1],
-            i = m();
-          return Object(b.jsx)('header', {
+            i = h();
+          return Object(u.jsx)('header', {
             className: i.Searchbar,
-            children: Object(b.jsxs)('form', {
+            children: Object(u.jsxs)('form', {
               className: i.SearchForm,
               onSubmit: function (e) {
                 e.preventDefault(), t(o), c('');
               },
               children: [
-                Object(b.jsx)('button', {
+                Object(u.jsx)('button', {
                   type: 'submit',
                   className: i.SearchFormButton,
-                  children: Object(b.jsx)('span', {
+                  children: Object(u.jsx)('span', {
                     className: i.SearchFormButtonLabel,
                     children: 'Search',
                   }),
                 }),
-                Object(b.jsx)('input', {
+                Object(u.jsx)('input', {
                   className: i.SearchFormInput,
                   value: o,
                   type: 'text',
@@ -170,7 +148,7 @@
             }),
           });
         },
-        j = Object(u.a)({
+        f = Object(d.a)({
           ImageGallery: {
             display: 'grid',
             maxWidth: 'calc(100vw - 48px)',
@@ -184,7 +162,7 @@
             marginRight: 'auto',
           },
         }),
-        O = Object(u.a)({
+        j = Object(d.a)({
           ImageGalleryItem: {
             borderRadius: '5px',
             boxShadow:
@@ -198,15 +176,15 @@
             '&:hover': { transform: 'scale(1.03)', cursor: 'zoom-in' },
           },
         }),
-        v = function (e) {
+        O = function (e) {
           var t = e.webformatURL,
             n = e.largeImageURL,
             a = e.alt,
             r = e.onClick,
-            o = O();
-          return Object(b.jsx)('li', {
+            o = j();
+          return Object(u.jsx)('li', {
             className: o.ImageGalleryItem,
-            children: Object(b.jsx)('img', {
+            children: Object(u.jsx)('img', {
               onClick: function () {
                 r(n, a);
               },
@@ -216,31 +194,31 @@
             }),
           });
         },
-        y = function (e) {
+        v = function (e) {
           var t = e.images,
             n = e.onClick,
-            a = j();
-          return Object(b.jsx)('ul', {
+            a = f();
+          return Object(u.jsx)('ul', {
             className: a.ImageGallery,
             children: t.map(function (e) {
               var t = e.id,
                 a = e.webformatURL,
                 r = e.largeImageURL,
                 o = e.tags;
-              return Object(b.jsx)(
-                v,
+              return Object(u.jsx)(
+                O,
                 { onClick: n, webformatURL: a, largeImageURL: r, alt: o },
                 t,
               );
             }),
           });
         },
-        S = Object(u.a)({
+        y = Object(d.a)({
           Button: {
             margin: ' 20px auto',
             padding: '8px 25px',
             borderRadius: '5px',
-            backgroundColor: ' #3f51b5',
+            backgroundColor: 'orange',
             transition: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
             textAlign: 'center',
             display: 'block',
@@ -256,25 +234,25 @@
             width: '180px',
             boxShadow:
               '0px 3px 1px -2px rgba(0, 0, 0, 0.2),    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)',
-            '&:hover,&:focus': { backgroundColor: '#303f9f' },
+            '&:hover,&:focus': { backgroundColor: 'blue' },
           },
         }),
-        w = function (e) {
+        S = function (e) {
           var t = e.onClick,
-            n = S();
-          return Object(b.jsx)('button', {
+            n = y();
+          return Object(u.jsx)('button', {
             type: 'button',
             className: n.Button,
             onClick: t,
             children: 'Load More',
           });
         },
-        k = n(23),
-        C = n.n(k),
-        I = Object(u.a)({ spinner: { margin: '0 auto' } }),
-        L = function () {
-          var e = I();
-          return Object(b.jsx)(C.a, {
+        w = n(23),
+        k = n.n(w),
+        C = Object(d.a)({ spinner: { margin: '0 auto' } }),
+        I = function () {
+          var e = C();
+          return Object(u.jsx)(k.a, {
             className: e.spinner,
             type: 'Puff',
             color: 'orange',
@@ -282,7 +260,7 @@
             width: 100,
           });
         },
-        R = Object(u.a)({
+        L = Object(d.a)({
           Overlay: {
             position: 'fixed',
             top: 0,
@@ -300,11 +278,11 @@
             maxHeight: 'calc(100vh - 24px)',
           },
         }),
-        N = document.querySelector('#modal-root'),
-        F = function (e) {
+        R = document.querySelector('#modal-root'),
+        N = function (e) {
           var t = e.onClose,
             n = e.children,
-            r = R();
+            r = L();
           Object(a.useEffect)(function () {
             return (
               window.addEventListener('keydown', c),
@@ -317,22 +295,22 @@
             'Escape' === e.code && t();
           };
           return Object(o.createPortal)(
-            Object(b.jsx)('div', {
+            Object(u.jsx)('div', {
               className: r.Overlay,
               onClick: function (e) {
                 e.currentTarget === e.target && t();
               },
-              children: Object(b.jsx)('div', {
+              children: Object(u.jsx)('div', {
                 className: r.Modal,
                 children: n,
               }),
             }),
-            N,
+            R,
           );
         };
-      F.defaultProps = { children: null };
-      var z = F;
-      var U = function () {
+      N.defaultProps = { children: null };
+      var F = N;
+      var z = function () {
         var e = Object(a.useState)([]),
           t = Object(l.a)(e, 2),
           n = t[0],
@@ -340,37 +318,58 @@
           o = Object(a.useState)(1),
           c = Object(l.a)(o, 2),
           s = c[0],
-          p = c[1],
-          u = Object(a.useState)(''),
-          x = Object(l.a)(u, 2),
-          g = x[0],
-          m = x[1],
+          d = c[1],
+          b = Object(a.useState)(''),
+          x = Object(l.a)(b, 2),
+          h = x[0],
+          f = x[1],
           j = Object(a.useState)(!1),
           O = Object(l.a)(j, 2),
-          v = O[0],
-          S = O[1],
+          y = O[0],
+          w = O[1],
           k = Object(a.useState)(null),
           C = Object(l.a)(k, 2),
-          I = C[0],
+          L = C[0],
           R = C[1],
           N = Object(a.useState)(''),
-          F = Object(l.a)(N, 2),
-          U = F[0],
-          B = F[1],
+          z = Object(l.a)(N, 2),
+          U = z[0],
+          B = z[1],
           G = Object(a.useState)(''),
           E = Object(l.a)(G, 2),
           P = E[0],
           T = E[1];
         Object(a.useEffect)(
           function () {
-            g && M();
+            h && M();
           },
-          [g],
+          [h],
         );
         var M = function () {
-            var e = { currentPage: s, searchQuery: g };
-            S(!0),
-              d(e)
+            var e = { currentPage: s, searchQuery: h };
+            w(!0),
+              (function (e) {
+                var t = e.searchQuery,
+                  n = void 0 === t ? '' : t,
+                  a = e.currentPage,
+                  r = void 0 === a ? 1 : a,
+                  o = e.perPage,
+                  c = void 0 === o ? 9 : o;
+                return p.a
+                  .get(
+                    '/?q='
+                      .concat(n, '&page=')
+                      .concat(r, '&key=')
+                      .concat(
+                        '20359490-f2da25da5356f05e90d2084aa',
+                        '&image_type=photo&orientation=horizontal&per_page=',
+                      )
+                      .concat(c),
+                  )
+                  .then(function (e) {
+                    return e.data.hits;
+                  });
+              })(e)
                 .then(function (e) {
                   var t = e.map(function (e) {
                     return {
@@ -383,7 +382,7 @@
                   r(function (e) {
                     return [].concat(Object(i.a)(e), Object(i.a)(t));
                   }),
-                    p(function (e) {
+                    d(function (e) {
                       return e + 1;
                     }),
                     window.scrollTo({
@@ -394,44 +393,44 @@
                 .catch(function (e) {
                   return R(e);
                 }),
-              S(!1);
+              w(!1);
           },
-          W = n.length > 0 && !v;
-        return Object(b.jsx)(h, {
-          children: Object(b.jsxs)('div', {
+          W = n.length > 0 && !y;
+        return Object(u.jsx)(g, {
+          children: Object(u.jsxs)('div', {
             className: 'App',
             children: [
-              Object(b.jsx)(f, {
+              Object(u.jsx)(m, {
                 onSubmit: function (e) {
-                  m(e), r([]), p(1), R(null);
+                  f(e), r([]), d(1), R(null);
                 },
               }),
-              I
-                ? Object(b.jsx)('h2', {
+              L
+                ? Object(u.jsx)('h2', {
                     children: 'OMG. Check connect to the internet(((',
                   })
-                : Object(b.jsx)(b.Fragment, {
+                : Object(u.jsx)(u.Fragment, {
                     children:
                       0 === n.length
-                        ? Object(b.jsx)('h2', {
+                        ? Object(u.jsx)('h2', {
                             children: 'Enter your request',
                           })
-                        : Object(b.jsxs)(b.Fragment, {
+                        : Object(u.jsxs)(u.Fragment, {
                             children: [
-                              Object(b.jsx)(y, {
+                              Object(u.jsx)(v, {
                                 images: n,
                                 onClick: function (e, t) {
                                   B(e), T(t);
                                 },
                               }),
-                              v && Object(b.jsx)(L, {}),
-                              W && Object(b.jsx)(w, { onClick: M }),
+                              y && Object(u.jsx)(I, {}),
+                              W && Object(u.jsx)(S, { onClick: M }),
                               U &&
-                                Object(b.jsx)(z, {
+                                Object(u.jsx)(F, {
                                   onClose: function () {
                                     B(''), T('');
                                   },
-                                  children: Object(b.jsx)('img', {
+                                  children: Object(u.jsx)('img', {
                                     src: U,
                                     alt: P,
                                   }),
@@ -445,11 +444,11 @@
       };
       n(72), n(73);
       c.a.render(
-        Object(b.jsx)(r.a.StrictMode, { children: Object(b.jsx)(U, {}) }),
+        Object(u.jsx)(r.a.StrictMode, { children: Object(u.jsx)(z, {}) }),
         document.getElementById('root'),
       );
     },
   },
   [[74, 1, 2]],
 ]);
-//# sourceMappingURL=main.9371c21f.chunk.js.map
+//# sourceMappingURL=main.2fe159db.chunk.js.map
