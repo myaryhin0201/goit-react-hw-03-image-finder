@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import imageApi from './API/imagesApi';
+import { fetchImages } from './API/imagesApi';
 import Layout from './components/Layouts';
 import Searchbar from './components/SearchBar';
 import ImageGallery from './components/ImageGallery';
@@ -19,6 +19,7 @@ function App() {
   useEffect(() => {
     if (!searchQuery) return;
     fetchArticles();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
   const onChangeQuery = query => {
@@ -32,8 +33,7 @@ function App() {
     const options = { currentPage, searchQuery };
     setIsLoading(true);
 
-    imageApi
-      .fetchImages(options)
+    fetchImages(options)
       .then(hits => {
         const imageData = hits.map(
           ({ id, webformatURL, largeImageURL, tags }) => ({

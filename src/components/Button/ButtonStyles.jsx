@@ -5,7 +5,7 @@ const useStyles = createUseStyles({
     margin: ' 20px auto',
     padding: '8px 25px',
     borderRadius: '5px',
-    backgroundColor: ' #3f51b5',
+    backgroundColor: 'orange',
     transition: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
     textAlign: 'center',
     display: 'block',
@@ -22,7 +22,7 @@ const useStyles = createUseStyles({
     boxShadow:
       '0px 3px 1px -2px rgba(0, 0, 0, 0.2),    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)',
     '&:hover,&:focus': {
-      backgroundColor: '#303f9f',
+      backgroundColor: 'blue',
     },
   },
 });
